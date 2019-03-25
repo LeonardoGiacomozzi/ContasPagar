@@ -2,7 +2,13 @@ package Db.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import Bean.ContasPagarBean;
 import Db.Conexao.Conexao;
@@ -32,9 +38,27 @@ public class ContasDao {
 		return true;
 	}
 	
-	public boolean Consulta(int prCodigo) 
+	public ContasPagarBean Consulta(int prCodigo) 
 	{
-		return true;
+		
+		Connection conexao = Conexao.abreConexao();
+		Statement st = conexao.createStatement();
+		ResultSet rs = st.executeQuery("SELECT * FROM conteudoprova ORDER BY cd_cont DESC LIMIT 1;");
+		ContasPagarBean conta;
+		List< ContasPagarBean> contas = new ArrayList<ContasPagarBean>();
+		try {
+			while (rs.next()) {
+				contas.add(new ContasPagarBean(rs.getInt("CODIGO"),rs.getString("NOMECREDOR"),rs.getDouble("VALORBRUTO"),
+								rs.getDouble("VALORDESCONTO"), rs.getDouble("LIMITECREDITO"), rs.getDouble("LIMITECREDITO"),
+								rs.getString(""), valorPago));
+
+			}
+		} finally {
+			Conexao.fechaConexao();
+		}
+		
+		
+		return ;
 	}
 }
 

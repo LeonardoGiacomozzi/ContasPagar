@@ -24,7 +24,7 @@
 	<div class="container">
 		<div id="logincentral">
 			<h1>Contas a Pagar</h1>
-			<form action="Controller/Login.jsp" method="post">
+			<form action="Controller/loginControl.jsp" method="post">
 				<div class="form-group" id="central">
 					<div class="input-group">
 						<span class="input-group-addon"><i

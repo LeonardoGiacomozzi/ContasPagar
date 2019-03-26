@@ -24,5 +24,6 @@
 			</sql:update>
 		</sql:transaction>
 	</c:catch>
+	<c:redirect url="../login.jsp"></c:redirect>
 </body>
 </html>

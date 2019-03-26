@@ -32,15 +32,17 @@
 			enctype="multipart-formData">
 			<div id="cadastroContas">
 				<h1>Contas Cadastro</h1>
-				<sql:query var="qryEstados" dataSource="${ conect }" >
-					SELECT CODIGO FROM CONTASPAGAR;
-				</sql:query>
-				<c:forEach var="codigo" items="${ qryEstados.rows }"></c:forEach>						
 				<div class="form-group">
 					<div class="input-group">
+						<sql:query var="qryEstados" dataSource="${ conect }">
+							SELECT CODIGO FROM CONTASPAGAR;
+						</sql:query>
+						<c:forEach var="codigo" items="${ qryEstados.rows }">
+							<c:set var="codigoOK" value="${ codigo.codigo }"/>
+						</c:forEach>
 						<span class="input-group-addon">Código:</span> <input
 							type="number" name="cod" required class="form-control"
-							value="${ codigo.codigo + 1 }" disabled>
+							value="${ codigoOK + 1 }" disabled>
 					</div>
 				</div>
 				<div class="form-group">

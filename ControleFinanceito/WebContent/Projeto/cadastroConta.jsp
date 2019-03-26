@@ -20,7 +20,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="Style/styleIndex.css">
-
+<script type="text/javascript" src="Scripts/Valor.js"></script>
 <meta charset="ISO-8859-1">
 
 <title>Contas a Pagar Cadastro</title>
@@ -56,14 +56,14 @@
 					<div class="input-group">
 						<span class="input-group-addon">Valor Bruto:</span> <input
 							type="number" name="valorBruto" required class="form-control"
-							value="">
+							value="" id="Bruto" onchange="calcular()">
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor Desconto:</span> <input
 							type="number" name="valorDesc" required class="form-control"
-							value="">
+							value="" id="Desconto" onchange="calcular()">
 					</div>
 				</div>
 				<div class="form-group">
@@ -90,7 +90,7 @@
 					<div class="input-group">
 						<span class="input-group-addon">Valor a Pagar:</span> <input
 							type="number" name="valorPago" required class="form-control"
-							value="${ param.valorPago }" disabled>
+							value="${ param.valorPago }" id="pagar" disabled>
 					</div>
 				</div>
 				<div class="form-group">

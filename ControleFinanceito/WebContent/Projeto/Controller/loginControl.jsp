@@ -24,6 +24,6 @@
 			<c:redirect url="../cadastroConta.jsp"></c:redirect>
 		</c:if>
 	</c:forEach>
-	<c:redirect url="../visualizarConta.jsp"></c:redirect>
+	<c:redirect url="../login.jsp"></c:redirect>
 </body>
 </html>

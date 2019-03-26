@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<title>Insert title here</title>
+<title>Insere Prova</title>
 </head>
 <body>
 	<c:catch var="erro">
@@ -24,6 +24,5 @@
 			</sql:update>
 		</sql:transaction>
 	</c:catch>
-	
 </body>
 </html>

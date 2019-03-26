@@ -28,42 +28,47 @@
 </head>
 <body>
 	<div class="container">
-		<form action="" method="post" enctype="multipart-formData">
+		<form action="Dao/Insere.jsp" method="post"
+			enctype="multipart-formData">
 			<div id="cadastroContas">
 				<h1>Contas Cadastro</h1>
+				<sql:query var="qryEstados" dataSource="${ conect }" >
+					SELECT CODIGO FROM CONTASPAGAR;
+				</sql:query>
+				<c:forEach var="codigo" items="${ qryEstados.rows }"></c:forEach>						
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Código:</span> <input
-							type="number" name="cod" required 
-							class="form-control" value="${ param.codigo }" disabled>
+							type="number" name="cod" required class="form-control"
+							value="${ codigo.codigo + 1 }" disabled>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Nome Credor:</span> <input
-							type="text" name="nomeCredor" required 
-							class="form-control" value="">
+							type="text" name="nomeCredor" required class="form-control"
+							value="">
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor Bruto:</span> <input
-							type="number" name="valorBruto" required 
-							class="form-control" value="">
+							type="number" name="valorBruto" required class="form-control"
+							value="">
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor Desconto:</span> <input
-							type="number" name="valorDesc" required 
-							class="form-control" value="">
+							type="number" name="valorDesc" required class="form-control"
+							value="">
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Limite Crédito:</span> <input
-							type="number" name="limiteCred" required 
-							class="form-control" value="">
+							type="number" name="limiteCred" required class="form-control"
+							value="">
 					</div>
 				</div>
 				<div class="form-group">
@@ -75,14 +80,14 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Endereço:</span> <input
-							type="text" name="endereco" required 
-							class="form-control" value="">
+							type="text" name="endereco" required class="form-control"
+							value="">
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor a Pagar:</span> <input
-							type="number" name="valorPago" required class="form-control" 
+							type="number" name="valorPago" required class="form-control"
 							value="${ param.valorPago }" disabled>
 					</div>
 				</div>

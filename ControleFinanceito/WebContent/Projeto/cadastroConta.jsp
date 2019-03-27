@@ -34,63 +34,63 @@
 				<h1>Contas Cadastro</h1>
 				<div class="form-group">
 					<div class="input-group">
-						<sql:query var="qryEstados" dataSource="${ conect }">
+						<sql:query var="qryCodigo" dataSource="${ conect }">
 							SELECT CODIGO FROM CONTASPAGAR;
 						</sql:query>
-						<c:forEach var="codigo" items="${ qryEstados.rows }">
+						<c:forEach var="codigo" items="${ qryCodigo.rows }">
 							<c:set var="codigoOK" value="${ codigo.codigo }"/>
 						</c:forEach>
 						<span class="input-group-addon">Código:</span> <input
 							type="number" name="cod" required class="form-control"
-							value="${ codigoOK + 1 }" disabled>
+							value="${ codigoOK + 1 }" disabled >
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Nome Credor:</span> <input
 							type="text" name="nomeCredor" required class="form-control"
-							value="">
+							value="" maxlength="50"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor Bruto:</span> <input
 							type="number" name="valorBruto" required class="form-control"
-							value="" id="Bruto" onchange="calcular()">
+							value="" id="Bruto" onchange="calcular()" step="0.01" maxlength="10"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor Desconto:</span> <input
 							type="number" name="valorDesc" required class="form-control"
-							value="" id="Desconto" onchange="calcular()">
+							value="" id="Desconto" onchange="calcular()" step="0.01" maxlength="10" />
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Limite Crédito:</span> <input
 							type="number" name="limiteCred" required class="form-control"
-							value="">
+							value="" step="0.01" maxlength="10" />
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Juros:</span> <input type="number"
-							name="juros" required class="form-control" value="">
+							name="juros" required class="form-control" value=""  step="0.01" maxlength="10"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Endereço:</span> <input
 							type="text" name="endereco" required class="form-control"
-							value="">
+							value="" maxlength="50" />
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">Valor a Pagar:</span> <input
 							type="number" name="valorPago" required class="form-control"
-							value="${ param.valorPago }" id="pagar" disabled>
+							value="${ param.valorPago }" id="pagar" disabled step="0.01" maxlength="10" />
 					</div>
 				</div>
 				<div class="form-group">

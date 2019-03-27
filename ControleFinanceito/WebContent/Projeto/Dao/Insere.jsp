@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <title>Insere Prova</title>
 </head>
 <body>
@@ -24,6 +24,7 @@
 			</sql:update>
 		</sql:transaction>
 	</c:catch>
-	<c:redirect url="../login.jsp"></c:redirect>
+	
+	<c:redirect url="../visualizarTudo.jsp"></c:redirect>
 </body>
 </html>

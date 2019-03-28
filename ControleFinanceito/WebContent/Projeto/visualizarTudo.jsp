@@ -64,7 +64,7 @@
 				</table>
 				<form action="Editar.jsp" method="post">
 					<input type="text" hidden="" name="id" value="${get.codigo}" >
-					<button type="submit">Ver Mais</button>
+					<button type="submit">Ver Mais/Editar</button>
 				</form>
 				<br><br>
 			</c:forEach>

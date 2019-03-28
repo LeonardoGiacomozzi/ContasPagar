@@ -13,7 +13,7 @@
 <body>
 	<sql:setDataSource var="conect" driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/financeiro?useSSL=true&serverTimezone=America/Sao_Paulo"
-		user="root" password="wircd123" scope="session" />
+		user="root" password="hericles" scope="session" />
 	<sql:query dataSource="${conect}" var="result">
 		SELECT * FROM login WHERE Usuario = ?
 		<sql:param value="${param.usuario}" />

@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script	src="Scripts/PassaParam.js"></script>
 <link
 	href="https://fonts.googleapis.com/css?family=Noticia+Text|Orbitron"
 	rel="stylesheet">
@@ -33,6 +33,7 @@
 			<sql:query var="qryConsultaTudo" dataSource="${ conect }">
 				SELECT * FROM CONTASPAGAR;
 			</sql:query>
+			<a href="cadastroConta.jsp">Cadastrar Novo</a>
 			<c:forEach var="get" items="${ qryConsultaTudo.rows }">
 				<h4>Conta número: ${ get.codigo }</h4>
 				<table class="table">
@@ -61,7 +62,10 @@
 						</tr>
 					</tbody>
 				</table>
-				<a href="">Ver mais</a>
+				<form action="Editar.jsp" method="post">
+					<input type="text" hidden="" name="id" value="${get.codigo}" >
+					<button type="submit">Ver Mais</button>
+				</form>
 				<br><br>
 			</c:forEach>
 		</div>

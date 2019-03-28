@@ -33,6 +33,9 @@
 			<div id="cadastroContas">
 				<h1>Contas Cadastro</h1>
 				<div class="form-group">
+				<a href="visualizarTudo.jsp">Visualizar pré cadastrados</a>
+				</div>
+				<div class="form-group">
 					<div class="input-group">
 						<sql:query var="qryCodigo" dataSource="${ conect }">
 							SELECT CODIGO FROM CONTASPAGAR;

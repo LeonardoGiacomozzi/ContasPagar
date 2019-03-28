@@ -1,0 +1,11 @@
+1 - Rodar o ScriptBanco.sql no HeidiSQL;
+
+2 - Mudar a senha do banco dentro do arquivo processaLogin.jsp;
+
+3 - Configurar o tomcat de sua preferência;
+
+4 - Copiar e Colar o arquivo ControleFinanceiro.war dentro da pasta webapps do tomcat;
+
+5 - Rodar o tomcat pelo prompt de comando;
+
+6 - localhost:8080/ControleFinanceito/Projeto/login.jsp
